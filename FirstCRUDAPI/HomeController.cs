@@ -1,4 +1,5 @@
 ﻿using FirstCRUDAPI.Context;
+using FirstCRUDAPI.Models;
 using FirstCRUDAPI.Services.Classes;
 using FirstCRUDAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Components;
@@ -18,6 +19,8 @@ namespace FirstCRUDAPI
             _userServices = new UserServices(configuration);
             _orderServices = new OrderServices(configuration);
         }
+
+        [Microsoft.AspNetCore.Mvc.Route("st")]
         [HttpGet("start")]
         public string Start()
         {
@@ -29,6 +32,13 @@ namespace FirstCRUDAPI
                 outPut += "\n";
             }
             return outPut;
+        }
+        [Route("cr")]
+        [HttpPost]
+        public User created(User user)
+        {
+            var userList = _userServices.create(user);
+            return user;
         }
 
 
