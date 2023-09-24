@@ -33,13 +33,13 @@ namespace FirstCRUDAPI
             }
             return outPut;
         }
-        [Route("cr")]
-        [HttpPost]
-        public User created(User user)
-        {
-            var userList = _userServices.create(user);
-            return user;
-        }
+        //[Route("cr")]
+        //[HttpPost]
+        //public User created(User user)
+        //{
+        //    var userList = _userServices.create(user);
+        //    return user;
+        //}
 
 
 
